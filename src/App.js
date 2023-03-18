@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import ExpenseForm from './ExpenseForm';
+import ExpenseList from './ExpenseList';
+import ExpenseChart from './ExpenseChart';
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+  const [filteredExpenses, setFilteredExpenses] = useState([]);
+  const [filterYear, setFilterYear] = useState(null);
+
+  const addExpense = expense => {
+    setExpenses([...expenses, expense]);
+    filterExpensesByYear(filterYear, [...expenses, expense]);
+  };
+
+  const filterExpensesByYear = (year, expensesToFilter = expenses) => {
+    const filteredExpenses = expensesToFilter.filter(
+      expense => !year || expense.date.getFullYear() === parseInt(year, 10)
+    );
+    setFilteredExpenses(filteredExpenses);
+    setFilterYear(year);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ExpenseForm addExpense={addExpense} />
+      <ExpenseList
+        expenses={filteredExpenses}
+        filterExpensesByYear={filterExpensesByYear}
+      />
+      <ExpenseChart expenses={expenses} filterYear={filterYear} />
     </div>
   );
 }
