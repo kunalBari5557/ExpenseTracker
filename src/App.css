@@ -41,6 +41,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
 }
+
 /*Expense-Form*/
 .expense-form {
   background-color: #f7f7f7;
