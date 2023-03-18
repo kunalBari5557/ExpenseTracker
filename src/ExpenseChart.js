@@ -25,8 +25,8 @@ function ExpenseChart({ expenses, selectedYear }) {
 
   return (
     <div>
-      <h2 style={{marginLeft:"6rem"}}>Expenses Chart</h2>
-      <BarChart width={500} height={300} data={data} style={{marginLeft:"4rem"}}>
+      <h2 style={{marginLeft:"6rem"}}>Expenses Chart:</h2>
+      <BarChart width={1200} height={300} data={data} style={{marginLeft:"4rem"}}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
         <YAxis />
