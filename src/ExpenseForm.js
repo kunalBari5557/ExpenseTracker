@@ -46,24 +46,6 @@ function ExpenseForm({ addExpense }) {
                 onChange={e => setDate(e.target.value)}
               />
             </Form.Group>
-            {/* <Form.Group>
-              <Form.Label>Amount:</Form.Label>
-              <Form.Control
-                type="number"
-                id="amount"
-                value={amount}
-                onChange={e => setAmount(e.target.value)}
-              />
-            </Form.Group> */}
-            {/* <Form.Group>
-              <Form.Label>Date:</Form.Label>
-              <Form.Control
-                type="date"
-                id="date"
-                value={date}
-                onChange={e => setDate(e.target.value)}
-              />
-            </Form.Group> */}
             <Button type="submit" variant="primary">Add Expense</Button>
           </Form>
         </Col>
