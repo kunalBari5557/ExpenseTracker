@@ -3,8 +3,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import ExpenseList from './ExpenseList';
-
 
 function ExpenseForm({ addExpense }) {
   const [title, setTitle] = useState('');
